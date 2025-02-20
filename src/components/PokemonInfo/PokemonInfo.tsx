@@ -1,48 +1,11 @@
-import { styled } from "@linaria/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Card, Title, PokemonDetails, Image, Text } from "./styles";
 
 type PokemonInfoProps = {
   selectedPokemon: string;
 };
 
-const Card = styled.div`
-  width: 484px;
-  min-height: 500px;
-  background-color: black;
-  padding: 44px 44px 16px;
-  display: flex;
-  flex-direction: column;
-  color: #a0a0a0;
-  font-family: "Raleway", serif;
-  font-weight: 500;
-  box-sizing: border-box;
-`;
-
-const Title = styled.h1`
-  font-size: 48px;
-  font-weight: 700;
-  margin: 0;
-`;
-
-
-
-const Image = styled.img`
-  object-fit: cover;
-    margin: 44px 0 39px;
-`;
-
-const PokemonDetails = styled.div`
-  width: 100%;
-`;
-
-const Text = styled.p`
-  font-size: 17px;
-
-  &:first-child{
-    margin-top: 0;
-    }
-`;
 
 const PokemonInfo: React.FC<PokemonInfoProps> = ({ selectedPokemon }) => {
   const [info, setInfo] = useState<null | IPokemon>(null);
